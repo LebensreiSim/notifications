@@ -1,6 +1,6 @@
-import { RetryPolicy, Recipient } from '@notificationParams';
+import { RetryPolicy, Recipient } from "@notificationParams";
 
-export interface Notification {
+interface Notification {
 
     message: string;
     messageType: string;
@@ -9,5 +9,6 @@ export interface Notification {
     failsafeOptions: string[];
     retryPolicies: RetryPolicy[];
 
-    
 }
+
+export default Notification;

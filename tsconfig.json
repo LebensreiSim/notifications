@@ -95,8 +95,11 @@
     
     "baseUrl": ".",
     "paths": {
-      "@notificationTypes": [
+      "@notificationParams": [
         "./src/core/models/types.ts"
+      ],
+      "@interface/*": [
+        "./src/core/models/interfaces/*"
       ]
     },
   },
