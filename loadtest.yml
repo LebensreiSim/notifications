@@ -1,0 +1,11 @@
+config:
+  target: "http://localhost:3000"
+
+scenarios:
+  - name: "Get users"
+    flow:
+      - get:
+          url: "/api/users"
+    arrivalRate: 2
+    rampTo: 10
+    duration: "1m"
