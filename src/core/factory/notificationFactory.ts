@@ -9,5 +9,5 @@ export interface Notification {
     failsafeOptions: string[];
     retryPolicies: RetryPolicy[];
 
-    
+    sendNotification (): void;
 }

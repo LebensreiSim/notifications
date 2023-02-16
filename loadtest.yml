@@ -1,11 +1,29 @@
 config:
   target: "http://localhost:3000"
+  phases:
+    - duration: 5
+      arrivalRate: 100
+      rampTo: 500
+      name: "Ramp up users"
+    - duration: 5
+      arrivalRate: 500
+      rampTo: 1000
+      name: "Peak load"
+    - duration: 5
+      arrivalRate: 1000
+      rampTo: 0
+      name: "Ramp down users"
 
 scenarios:
-  - name: "Get users"
+  - name: "Max open connections per second"
     flow:
-      - get:
-          url: "/api/users"
-    arrivalRate: 2
-    rampTo: 10
-    duration: "1m"
+      - loop:
+          - get:
+              url: "/"
+              headers:
+                connection: keep-alive
+              capture:
+                socket: true
+              timeout: 5
+          - think: 0.5
+        times: 10

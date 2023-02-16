@@ -1,8 +1,9 @@
 import Notification from "@interface/notification";
 import { Recipient, RetryPolicy } from "@notificationParams";
+import AWS from 'aws-sdk';
 
 export class EmailNotification implements Notification {
-    
+
     message: string;
     messageType: string;
     recipientHost: Recipient;
@@ -19,6 +20,7 @@ export class EmailNotification implements Notification {
         this.retryPolicies = retryPolicies;
     }
 
-
+    sendNotification = async (): Promise<void> => {
+    }
 
 }
