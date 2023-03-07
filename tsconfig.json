@@ -94,10 +94,10 @@
     "baseUrl": ".",
     "paths": {
       "@notificationParams": [
-        "./src/core/models/types.ts"
+        "./src/models/types.ts"
       ],
       "@interface/*": [
-        "./src/core/models/interfaces/*"
+        "./src/models/interfaces/*"
       ]
     },
   },
